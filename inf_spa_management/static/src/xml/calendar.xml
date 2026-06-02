@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <t t-name="booking_calendar_template">
+    <div class="row">
+      <div class="col-3">
+        <div class="fc-top-title">Booking Calendar</div>
+      </div>
+      <div class="col-2"><div class="fc-top-filter"/></div>
+      <div class="col-2">
+        <div class="fc-top-filter">
+          <select id="branch_selector"
+                  t-on-change="onSelectionChange"
+                  t-if="state.branches.length &gt; 1"
+                  class="form-control form-control-sm">
+            <option value="all">All Branches</option>
+            <t t-foreach="state.branches" t-as="br" t-key="br.id">
+              <option t-att-value="br.id"><t t-esc="br.name"/></option>
+            </t>
+          </select>
+          <span t-if="state.branches.length == 1"
+                style="font-weight:700; font-size:15px; line-height:2">
+            Branch: <t t-esc="state.branches[0].name"/>
+          </span>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="fc-top-filter">
+          <select id="service_selector"
+                  t-on-change="onSelectionChange"
+                  class="form-control form-control-sm"
+                  style="width:100%">
+            <option value="0" data-tmpl_id="0">Search By Service</option>
+            <t t-foreach="state.services" t-as="service" t-key="service.id">
+              <option t-att-value="service.id"
+                      t-att-data-tmpl_id="service.template_id">
+                <t t-esc="service.name"/>
+              </option>
+            </t>
+          </select>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="fc-top-filter">
+          <select id="employee_selector"
+                  t-on-change="onSelectionChange"
+                  class="form-control form-control-sm">
+            <option value="all">All Staff</option>
+            <t t-foreach="state.employees" t-as="emp" t-key="emp.id">
+              <option t-att-value="emp.id"><t t-esc="emp.title"/></option>
+            </t>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12"><div id="calendar"/></div>
+    </div>
+  </t>
+</templates>

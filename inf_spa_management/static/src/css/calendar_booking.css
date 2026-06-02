@@ -1,0 +1,266 @@
+/* Calendar container focus outline */
+.rt_cal_container :focus {
+    outline-style: auto;
+}
+
+/* Calendar title styling */
+.rt_cal_title {
+    box-sizing: border-box;
+    background-color: white;
+    color: #2c2c2c;
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    padding-left: 20px;
+}
+
+/* Main container */
+.rt_cal_container {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.rt_cal_container div {
+    -moz-user-select: none;
+    -moz-user-select: none;
+}
+
+/* Navigation line */
+.rt_cal_navline {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 750px;
+    height: 20px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.rt_cal_navline div {
+    position: absolute;
+    top: 14px;
+    white-space: nowrap;
+}
+
+/* Date display */
+.rt_cal_navline .rt_cal_date {
+    border: 0;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Roboto, Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    padding: 1px 0 0;
+    color: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+/* Buttons backgrounds (hidden part) */
+.rt_cal_button .rt_left_bg {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 17px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Prev button */
+.rt_cal_prev_button {
+    position: absolute;
+    right: 148px;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('/spa_booking_calendar/static/lib/img/arrow_left.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 5px 0 0 5px;
+}
+
+/* Today button */
+.rt_cal_today_button {
+    position: absolute;
+    right: 57px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0288d1;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 30px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+}
+
+/* Next button */
+.rt_cal_next_button {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('/spa_booking_calendar/static/lib/img/arrow_right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 0 5px 5px 0;
+}
+
+/* View tabs */
+.rt_cal_tab {
+    display: inline-block;
+    width: 88px;
+    height: 29px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-top: 1px;
+    border: 1px solid #0288d1;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: transparent;
+    color: #0288d1;
+    font-size: inherit;
+}
+
+.rt_cal_tab_first {
+    border-radius: 2px 0 0 2px;
+    border-right: none;
+}
+
+.rt_cal_tab_last {
+    border-radius: 0 2px 2px 0;
+}
+
+.rt_cal_tab.active {
+    cursor: default;
+    color: #fff;
+    background-color: #0288d1;
+    border: 1px solid #0288d1;
+    border-bottom: none;
+    font-size: inherit;
+    font-weight: 500;
+    z-index: 25;
+}
+
+/* Shared line-height for controls */
+.rt_cal_date,
+.rt_cal_next_button,
+.rt_cal_prev_button,
+.rt_cal_tab,
+.rt_cal_today_button {
+    line-height: 30px;
+}
+
+/* Header and data areas */
+.rt_cal_header {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    overflow: hidden;
+    background: #fff;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    z-index: 2;
+}
+
+.rt_cal_data {
+    position: absolute;
+    top: 50px;
+    width: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Touch actions */
+.rt_cal_data,
+.rt_cal_event,
+.rt_cal_event_clear,
+.rt_cal_event_line {
+    touch-action: pan-y;
+    -ms-touch-action: pan-y;
+}
+
+/* Top toolbar spacing */
+.fc-top-title {
+    padding: 20px 10px 30px 50px;
+}
+
+.fc-top-filter {
+    padding: 20px 0 30px;
+}
+
+/* Event text */
+.fc-content {
+    color: #000 !important;
+}
+
+/* Today cell background */
+.fc-unthemed td.fc-today {
+    background-color: #fff !important;
+}
+
+/* Responsive heights */
+@media (min-width: 1281px) {
+    .fc-scroller {
+        height: 480px !important;
+    }
+    .fc-scroller.fc-time-grid-container {
+        height: 640px !important;
+        overflow: scroll !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .fc-scroller {
+        height: 480px !important;
+    }
+    .fc-scroller.fc-time-grid-container {
+        height: 540px !important;
+        overflow: scroll !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .fc-scroller {
+        height: 480px !important;
+    }
+    .fc-scroller.fc-time-grid-container {
+        height: 440px !important;
+        overflow: scroll !important;
+    }
+}
+
+/* Hide time labels */
+div.fc-time span {
+    display: none !important;
+}
+
+/* Event title styling */
+div.fc-title {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* List view item cursor */
+.fc-list-table .fc-list-item {
+    cursor: pointer;
+}
+
+/* Block background events */
+.fc-bgevent {
+    cursor: not-allowed;
+}
